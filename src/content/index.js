@@ -58,6 +58,8 @@ function activatePage() {
                     initializeTooltip(
                         {
                             search: result.name,
+                            lat: result.lat,
+                            lng: result.lng,
                             link: result.lod.wikipedia,
                             image: result.image.thumbnail,
                             summary: result.abstract,
