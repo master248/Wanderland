@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Grid, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import Loader from './loader';
 import PopupMap from './popupMap';
 import PopupNavbar from './navbar';
@@ -77,7 +77,7 @@ class Popup extends Component {
                         loading={this.state.loading}
                         error={this.state.error}
                     />
-                    <Grid>
+                    <Container>
                         {this.state.placesScraped.length !== 0 && (
                             <>
                                 <Row>
@@ -91,7 +91,7 @@ class Popup extends Component {
                                             />
                                         )}
                                     </Col>
-                                    <Col xs={4} xsOffset={1}>
+                                    <Col xs={{ span: 4, offset: 1 }}>
                                         <ResultsList
                                             places={this.state.placesScraped}
                                             setPlaces={this.setLastPlacesScraped}
@@ -102,7 +102,7 @@ class Popup extends Component {
                                 </Row>
                             </>
                         )}
-                    </Grid>
+                    </Container>
                 </div>
                 {this.state.loading && <Loader />}
             </>
